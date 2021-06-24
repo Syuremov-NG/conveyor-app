@@ -1,15 +1,35 @@
+import "./App.css";
+import ContentHeader from "./Components/Content/Content-Header/Content-Header";
+import Body from "./Components/Content/Content-Body/Body";
+import React, { useEffect } from "react";
+const axios = require('axios').default;
 
-import './App.css';
-import AppHeader from './Components/Content/App-header/App-header';
-import Body from './Components/Body/Body';
+function App(){
 
-function App() {
-  return (
+  let data;
+
+  useEffect(
+    () => {
+      let timerId = setTimeout(async function fetchData(){
+        try {
+          const response = await axios.get('http://192.168.168.34:9000/api/test');
+          data = response.data.res;
+          console.log(data)
+        } catch (error) {
+          console.log(error)
+        }
+        timerId = setTimeout(fetchData,1000)
+      }, 1000)
+    })
+
+
+  return(
     <div className="App">
-      <AppHeader/>
-      <Body/>
+        <ContentHeader/>
+        {/* <Body data = {this.state.data}/> */}
     </div>
-  );
+  )
 }
+
 
 export default App;

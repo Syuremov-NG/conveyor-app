@@ -1,0 +1,6 @@
+.App{
+    max-height: 100vh;
+    height: 100vh;
+    background: black;
+    min-width: 1280px;
+}

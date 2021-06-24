@@ -1,0 +1,29 @@
+.header{
+    display: flex;
+    max-width: 100%;
+    background: black;
+    justify-content: space-between;
+    padding: 0 10px 5px 10px;
+    align-items: flex-end;
+}
+.header__logo{
+    width: 350px;
+    background: black;
+}
+.logo-name img, .logo-comb img{
+    width: 100%;
+}
+.logo-comb{
+    display: flex;
+    color: white;
+}
+.comb-text{
+    margin-left: 10px;
+    font-size: 18px;
+}
+.header__title{
+    color: white;
+    height: 100%;
+    font-weight: bold;
+    font-size: 30px;
+}
