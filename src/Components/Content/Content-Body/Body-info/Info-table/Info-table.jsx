@@ -16,7 +16,7 @@ export default function InfoTable(props){
             return 'white'
         }
     }
-
+    console.log("test", props.data.table.day)
     return(
         <div className={'info-table'}>
             <table>
@@ -33,19 +33,23 @@ export default function InfoTable(props){
                 </tr>
                 <tr>
                     <td>Смена</td>
-                    <td className={'el first first-1'}>{props.table.day.plan}</td>
-                    <td className={'el first first-2'}>{props.table.day.planCurr}</td>
-                    <td className={'el first first-3'}>{props.table.day.factCurr}</td>
-                    <td className={'el first first-4'} style={{color: getCol(props.table.day.factCurr - props.table.day.planCurr)}}>{props.table.day.factCurr - props.table.day.planCurr}</td>
-                    <td className={'el first first-5'}>{props.table.day.plan - props.table.day.factCurr}</td>
+                    <td className={'el first first-1'}>{Array.isArray(props.data) ? "-" : props.data.table.day.plan}</td>
+                    <td className={'el first first-2'}>{Array.isArray(props.data) ? "-" : props.data.table.day.planCurr}</td>
+                    <td className={'el first first-3'}>{Array.isArray(props.data) ? "-" : props.data.table.day.factCurr}</td>
+                    <td className={'el first first-4'} style={{color: Array.isArray(props.data) ? getCol(0) : getCol(props.data.table.day.factCurr - props.data.table.day.planCurr)}}>
+                        {Array.isArray(props.data) ? 0 : props.data.table.day.factCurr - props.data.table.day.planCurr}
+                    </td>
+                    <td className={'el first first-5'}>{Array.isArray(props.data) ? 0 : props.data.table.day.plan - props.data.table.day.factCurr}</td>
                 </tr>
                 <tr>
                     <td>Месяц</td>
-                    <td className={'el second second-1'}>{props.table.month.plan}</td>
-                    <td className={'el second second-2'}>{props.table.month.planCurr}</td>
-                    <td className={'el second second-3'}>{props.table.month.factCurr}</td>
-                    <td className={'el second second-4'} style={{color: getCol(props.table.month.factCurr - props.table.month.planCurr)}}>{props.table.month.factCurr - props.table.month.planCurr}</td>
-                    <td className={'el second second-5'}>{props.table.month.plan - props.table.month.factCurr}</td>
+                    <td className={'el second second-1'}>{Array.isArray(props.data) ? "-" : props.data.table.month.plan}</td>
+                    <td className={'el second second-2'}>{Array.isArray(props.data) ? "-" : props.data.table.month.planCurr}</td>
+                    <td className={'el second second-3'}>{Array.isArray(props.data) ? "-" : props.data.table.month.factCurr}</td>
+                    <td className={'el second second-4'} style={{color: Array.isArray(props.data) ? getCol(0) : getCol(props.data.table.month.factCurr - props.data.table.month.planCurr)}}>
+                        {Array.isArray(props.data) ? 0 : props.data.table.month.factCurr - props.data.table.month.planCurr}
+                    </td>
+                    <td className={'el second second-5'}>{Array.isArray(props.data) ? 0 : props.data.table.month.plan - props.data.table.month.factCurr}</td>
                 </tr>
             </table>
         </div>

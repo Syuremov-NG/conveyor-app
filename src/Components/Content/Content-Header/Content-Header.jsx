@@ -4,7 +4,7 @@ import logoComb from "../../../img/logo-comb.png";
 import "./Content-Header.css"
 import HeaderTime from "./Header-time/Header-time";
 
-export default function ContentHeader() {
+export default function ContentHeader(props) {
     return (
         <div className={"header"}>
             <div className={"header__logo"}>
@@ -16,13 +16,11 @@ export default function ContentHeader() {
                         <div className={'comb-img'}>
                             <img src={logoComb} alt="HARVESTER"/>
                         </div>
-                        <div className={'comb-text'}>Дивизион тракторной техники</div>
+                        <div className={'comb-text'}>{props.data.division}</div>
                     </div>
                 </div>
             </div>
-            <div className={"header__title"}>
-                Главный конвейер сборки тракторов
-            </div>
+            <div className={"header__title"}>{props.data.area}</div>
             <HeaderTime/>
         </div>
     );

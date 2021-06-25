@@ -3,7 +3,7 @@ import './Body-header.scss';
 
 export default function BodyHeader(props){
     function getCol(num){
-        if(num > props.plan){
+        if(+num > props.data.plan){
             return 'red'
         }
         else {
@@ -18,14 +18,14 @@ export default function BodyHeader(props){
             </div>
             <div className = 'current-status'>
                 <div className = 'planTime-stat'>
-                    ПЛАН {props.plan} мин.
+                    ПЛАН {Array.isArray(props.data) ? "-" : props.data.plan} мин.
                 </div>
                 <div className = 'endTime-stat'>
-                    {props.shiftEnds}
+                    {Array.isArray(props.data) ? "-" : props.data.shiftEnds}
                 </div>
             </div>
-            <div className = 'actual-status' style={{background: getCol(props.fact)}}>
-                ФАКТ {props.fact} мин
+            <div className = 'actual-status' style={{background: getCol(props.data.fact)}}>
+                ФАКТ {Array.isArray(props.data) ? "-" : props.data.fact} мин
             </div>
         </div>
     )

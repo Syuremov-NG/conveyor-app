@@ -28,10 +28,9 @@ export default function Body(props){
 
     return(
         <div className={'content-body'}>
-            <BodyHeader data = {props.res}/>
+            <BodyHeader data = {props.data}/>
             <div className={''}>
-
-                <BodyInfo data = {props.res}/>
+                <BodyInfo data = {props.data}/>
             </div>
         </div>
     )
