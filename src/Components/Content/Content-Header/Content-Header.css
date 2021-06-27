@@ -1,13 +1,11 @@
 .header{
     display: flex;
-    max-width: 100%;
-    background: black;
     justify-content: space-between;
     padding: 0 10px 5px 10px;
     align-items: flex-end;
 }
 .header__logo{
-    width: 350px;
+    width: 300px;
     background: black;
 }
 .logo-name img, .logo-comb img{

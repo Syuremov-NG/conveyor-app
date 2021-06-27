@@ -16,11 +16,11 @@ export default function ContentHeader(props) {
                         <div className={'comb-img'}>
                             <img src={logoComb} alt="HARVESTER"/>
                         </div>
-                        <div className={'comb-text'}>{props.data.division}</div>
+                        <div className={'comb-text'}>{Array.isArray(props.data) ? "-" : props.data.division}</div>
                     </div>
                 </div>
             </div>
-            <div className={"header__title"}>{props.data.area}</div>
+            <div className={"header__title"}>{Array.isArray(props.data) ? "-" : props.data.area}</div>
             <HeaderTime/>
         </div>
     );

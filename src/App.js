@@ -13,10 +13,11 @@ function App(){
       let timerId;
       async function fetchData(){
         try {
-          const response = await axios.get('http://192.168.168.34:9000/api/test');
+          const response = await axios.get('http://localhost:9000/api/test'); //http://192.168.168.34:9000/api/test
           setPosts(response.data.res);
         } catch (error) {
           console.log(error);
+          setPosts([])
         }
         return timerId = setTimeout(fetchData,2000);
       }
@@ -26,8 +27,10 @@ function App(){
     
   return(
     <div className="App">
-        <ContentHeader data = {posts}/>
-        <Body data = {posts}/>
+        <div className={'app-wrapper'}>
+            <ContentHeader data = {posts}/>
+            <Body data = {posts}/>
+        </div>
     </div>
   )
 }
