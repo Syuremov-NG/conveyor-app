@@ -27,7 +27,12 @@ export default function Body(props){
             <div className={'body-info'}>
 
                 <div className={'left-side'}>
-                    {Array.isArray(props.data) ? '-' : (props.data.install.length === 0 ? "-" : <BodySide classOfCards = {'side-cards'} type = {props.data.install} side = {'left'}/>)}
+                    {Array.isArray(props.data) ? '-' :
+                        (props.data.install.length === 0 ? "-" :
+                            <BodySide classOfCards = {'side-cards'} type = {props.data.install} side = {'install'}/>
+                        )
+                    }
+
                     <div className={'left-info'}>
                         <div className={'side-info__counter'}>
                             {Array.isArray(props.data) ? '-' : <span style={{color: getCol(props.data.install.length, 5)}}>{props.data.install.length}</span>}
@@ -40,13 +45,13 @@ export default function Body(props){
                 <div className={'body-table'}>
                     <InfoTable data = {props.data}/>
                     <div className={'body-conv'}>
-                        {Array.isArray(props.data) ? '-' : props.data.conv.map((el) => <HarvesterCard className = {'conv-cards'} type = {el}/>) }
+                        {Array.isArray(props.data) ? '-' : props.data.conv.map((el) => <HarvesterCard className = {'conv-cards'} type = {el} side = {'build'}/>) }
                     </div>
                     <div className={'conv-info'}>
                         <div className={'conv-info__wrapper'}>
                             <div></div>
                             <div className={'conv-info__count'}>
-                                {Array.isArray(props.data) ? '-' : <div className={'conv-counter'} style={{color: getCol2(props.data.conv.length)}}>{props.data.conv.length}</div>}
+                                {Array.isArray(props.data) ? "-": <div className={'conv-counter'} style={{color: getCol2(props.data.conv.length)}}>{props.data.conv.length}</div>}
                                 <div className={'conv-counter__text'}>
                                     на ГК
                                 </div>
@@ -57,7 +62,12 @@ export default function Body(props){
                 </div>
 
                 <div className={'right-side'}>
-                    {Array.isArray(props.data) ? '-' : (props.data.build.length === 0 ? "-" : <BodySide classOfCards = {'side-cards'} type = {props.data.build} side = {'right'}/>)}
+                    {Array.isArray(props.data) ? '-' :
+                        (props.data.build.length === 0 ? "-" :
+                            <BodySide classOfCards = {'side-cards'} type = {props.data.build} side = {'build'}/>
+                        )
+                    }
+
                     <div className={'right-info'}>
                         <div className={'side-info__counter'}>
                             {Array.isArray(props.data) ? '-' : <span style={{color: getCol(props.data.build.length, 5)}}>{props.data.build.length}</span>}

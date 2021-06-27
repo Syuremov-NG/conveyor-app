@@ -1,40 +1,16 @@
-.harvester-card{
+
+.harvester-card {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   position: relative;
-  color: white;
-  background: red;
   width: 90px;
   height: 65px;
   font-size: 10px;
-
+  box-sizing: border-box;
 }
-.harvester-card:before{
-  content: "";
-  position: absolute;
-  top:0;
-  left:0;
 
-  border-bottom: 10px solid red;
-  border-left: 10px solid black;
-  border-right: 10px solid black;
-  width: 70px;
-  height: 0;
-
-}
-.harvester-card:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  border-top: 10px solid red;
-  border-left: 10px solid black;
-  border-right: 10px solid black;
-  width: 70px;
-  height: 0;
-}
 .side-cards{
   margin-top: 18px;
 }
