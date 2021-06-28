@@ -2,14 +2,8 @@ import React from 'react';
 import './Body-header.scss';
 
 export default function BodyHeader(props){
-    function getCol(num){
-        if(+num > props.data.plan){
-            return 'red'
-        }
-        else {
-            return 'none'
-        }
-    }
+    const getCol = (num) => +num > props.plan ? 'background-red' : '';
+
     return(
         <div className = 'body-header'>
             <div className = 'titles'>
@@ -18,15 +12,16 @@ export default function BodyHeader(props){
             </div>
             <div className = 'current-status'>
                 <div className = 'planTime-stat'>
-                    ПЛАН {Array.isArray(props.data) ? "-" : props.data.plan} мин.
+                    ПЛАН {props.plan} мин.
                 </div>
                 <div className = 'endTime-stat'>
-                    {Array.isArray(props.data) ? "-" : props.data.shiftEnds}
+                    {props.shiftEnds}
                 </div>
             </div>
-            <div className = 'actual-status' style={{background: getCol(props.data.fact)}}>
-                ФАКТ {Array.isArray(props.data) ? "-" : props.data.fact} мин
+            <div className = {`actual-status ${getCol(props.fact)}`}>
+                ФАКТ {props.fact} мин
             </div>
         </div>
     )
 }
+BodyHeader.defaultProps = {plan: 0, fact: 0, shiftEnds: "--:--"}

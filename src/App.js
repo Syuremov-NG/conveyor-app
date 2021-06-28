@@ -2,11 +2,11 @@ import "./App.css";
 import ContentHeader from "./Components/Content/Content-Header/Content-Header";
 import Body from "./Components/Content/Content-Body/Body";
 import React, { useEffect, useState } from "react";
-const axios = require('axios').default;
+import axios from 'axios';
 
 function App(){
 
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState();
 
   useEffect(
     () => {
@@ -17,18 +17,18 @@ function App(){
           setPosts(response.data.res);
         } catch (error) {
           console.log(error);
-          setPosts([])
+          setPosts()
         }
         return timerId = setTimeout(fetchData,2000);
       }
       fetchData();
       return clearTimeout(timerId);
     }, [])
-    
+
   return(
     <div className="App">
         <div className={'app-wrapper'}>
-            <ContentHeader data = {posts}/>
+            <ContentHeader division = {posts?.division} area = {posts?.area}/>
             <Body data = {posts}/>
         </div>
     </div>
