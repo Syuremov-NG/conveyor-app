@@ -1,8 +1,9 @@
-import "./App.css";
+import "./App.scss";
 import ContentHeader from "./Components/Content/Content-Header/Content-Header";
 import Body from "./Components/Content/Content-Body/Body";
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import BodyHeader from './Components/Content/Content-Body/Body-header/Body-header';
 
 function App(){
 
@@ -27,10 +28,9 @@ function App(){
 
   return(
     <div className="App">
-        <div className={'app-wrapper'}>
-            <ContentHeader division = {posts?.division} area = {posts?.area}/>
-            <Body data = {posts}/>
-        </div>
+        <ContentHeader division = {posts?.division} area = {posts?.area}/>
+        <BodyHeader plan = {posts?.plan} fact = {posts?.fact} shiftEnds = {posts?.shiftEnds}/>
+        <Body data = {posts}/>
     </div>
   )
 }

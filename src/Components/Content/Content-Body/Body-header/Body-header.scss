@@ -1,23 +1,25 @@
 .body-header{
-    display: flex;
     padding: 5px 10px 5px 5px;
-    justify-content: space-between;
-    font-size: 18px;
-    color: white;
     background: #0463f3;
-    height: 80px;
+    box-sizing: border-box;
+    font-size: 30px;
+    width: 100%;
 }
 .planTime-text, .planTime-stat, .actual-status{
     font-weight: bold;
     font-size: 30px;
 }
-.endTime-text, .endTime-text, .endTime-stat{
-    font-size: 30px;
+
+.body-header__first-stroke{
+    display: flex;
+    justify-content: space-between;
 }
-.current-status{
-    margin-right: auto;
-    margin-left: 5%;
+.body-header__second-stroke{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
 }
+
 .actual-status{
     height: 45px;
     max-width: min-content;

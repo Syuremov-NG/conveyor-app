@@ -1,8 +1,12 @@
+@import "../../../Variables";
 .header{
     display: flex;
+    position: relative;
     justify-content: space-between;
-    padding: 0 10px 5px 10px;
     align-items: flex-end;
+    box-sizing: border-box;
+    width: 100%;
+    padding-bottom: 10px;
 }
 .header__logo{
     width: 300px;
@@ -13,15 +17,12 @@
 }
 .logo-comb{
     display: flex;
-    color: white;
 }
 .comb-text{
     margin-left: 10px;
     font-size: 18px;
 }
 .header__title{
-    color: white;
-    height: 100%;
     font-weight: bold;
     font-size: 30px;
 }

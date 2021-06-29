@@ -1,9 +1,7 @@
 .info-table{
   display: flex;
   justify-content: center;
-  color:black;
   width: 100%;
-  height: 50%;
 }
 table {
   border-spacing: 0;
@@ -17,12 +15,12 @@ th {
   border: 1px solid white;
   font-weight: 400;
   font-size: 18px;
-  color: white;
 }
 /* границы ячеек тела таблицы */
 td {
   border: 1px solid white;
   margin: 0;
+  color: black !important;
 }
 .first-1{
   background: #18d274;
@@ -46,7 +44,6 @@ td.title{
 
 .table_H{
   background: grey;
-  color: white;
   font-weight: normal;
   font-size: 30px;
 }

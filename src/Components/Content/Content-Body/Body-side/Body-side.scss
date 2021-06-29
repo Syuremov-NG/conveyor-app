@@ -1,8 +1,36 @@
 .body-side{
   display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.body-side__cards{
+  box-sizing: border-box;
+  display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   height: 100%;
-  margin-bottom: 22px;
+  width: 100%;
+  margin-bottom: 80px;
 }
+.side-info{
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+}
+.side-info__wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.side-info__counter{
+  font-size: 40px;
+  font-weight: bold;
+}
+.side-info__text{
+  font-weight: bold;
+  margin-top: -10px;
+}
+

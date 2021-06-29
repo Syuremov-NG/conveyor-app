@@ -1,20 +1,42 @@
-
+@import '../../../../Variables';
 .harvester-card {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: relative;
   width: 90px;
   height: 65px;
   font-size: 10px;
   box-sizing: border-box;
+  .card-code{
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .card-number{
+    font-size: 12px;
+  }
 }
-
+@media screen and (max-width: 1120px), (max-height: 630px){
+  .harvester-card{
+    width: 95px * $scale-ratio;
+    height: 65px * $scale-ratio;
+    .card-code{
+      font-size: 18px * $scale-ratio;
+    }
+    .card-equip{
+      font-size: 10px * $scale-ratio;
+    }
+    .card-number{
+      font-size: 12px * $scale-ratio;
+    }
+  }
+}
 .side-cards{
-  margin-top: 18px;
+  margin-top: 15px;
 }
-
+.conv-cards{
+  margin: 0 10px;
+}
 .install-2{
   background: #7a3706;
   color: #bec0be;

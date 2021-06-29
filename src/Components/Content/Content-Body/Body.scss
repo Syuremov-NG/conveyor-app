@@ -1,54 +1,44 @@
 .content-body{
-  position: absolute;
-  height: 83vh;
-  width: 97%;
-  border-collapse: collapse;
-}
-.body-info{
   display: flex;
-  max-width: 100%;
-  height: 85%;
-  justify-content: space-between;
+  width: 100%;
+  height: 100%;
 }
-.body-table{
+.left-side, .right-side{
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  width: 10%;
+  height: 100%;
+  border: 3px solid gray;
+}
+.body-center{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   border-top: 3px solid gray;
   border-bottom: 3px solid gray;
-
-}
-.left-side, .right-side{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 150px;
-  height: 100%;
-  border: 3px solid gray;
-}
-.left-info, .right-info{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  margin-top: auto;
-  margin-bottom: 5px;
 }
 .body-conv{
   display: flex;
+  box-sizing: border-box;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   background: #666d60;
-  height: 90px;
+  height: 80px;
   margin-top: auto;
+  margin-bottom: 70px;
+  overflow: hidden;
 }
 .conv-info{
+  position: absolute;
+  bottom: 0;
   width: 100%;
   height: 80px;
 }
-
 .conv-counter{
   font-size: 40px;
   font-weight: bold;
@@ -61,7 +51,6 @@
   margin-top: 10px;
 }
 .conv-counter__text{
-  color: white;
   font-weight: bold;
   margin-top: -15px;
   font-size: 20px;
@@ -74,12 +63,4 @@
   margin-right: 20px;
   margin-top: -25px;
   color: white;
-}
-.side-info__counter{
-  font-size: 40px;
-  font-weight: bold;
-}
-.side-info__text{
-  font-weight: bold;
-  margin-top: -10px;
 }

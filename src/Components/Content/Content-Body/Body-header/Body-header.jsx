@@ -6,20 +6,21 @@ export default function BodyHeader(props){
 
     return(
         <div className = 'body-header'>
-            <div className = 'titles'>
+            <div className = 'body-header__first-stroke'>
                 <div className = 'planTime-text'>Время такта:</div>
-                <div className = 'endTime-text'>Плановое время ожидания смены:</div>
-            </div>
-            <div className = 'current-status'>
                 <div className = 'planTime-stat'>
                     ПЛАН {props.plan} мин.
                 </div>
+                <div className = {`actual-status ${getCol(props.fact)}`}>
+                    ФАКТ {props.fact} мин
+                </div>
+            </div>
+            <div className = 'body-header__second-stroke'>
+                <div className = 'endTime-text'>Плановое время ожидания смены:</div>
                 <div className = 'endTime-stat'>
                     {props.shiftEnds}
                 </div>
-            </div>
-            <div className = {`actual-status ${getCol(props.fact)}`}>
-                ФАКТ {props.fact} мин
+
             </div>
         </div>
     )
