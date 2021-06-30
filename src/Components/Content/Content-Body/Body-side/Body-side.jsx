@@ -8,7 +8,7 @@ export default function BodySide(props){
     return(
         <div className='body-side'>
             <div className='body-side__cards'>
-                {props.type.map((el, index) => index < 8 ? <HarvesterCard type = {el} className = {props.classOfCards} side = {props.side}/>: '')}
+                {props.type.map((el, index) => index < 8 ? <HarvesterCard type = {el} className = {props.classOfCards} size = {1.2} side = {props.side}/>: '')}
             </div>
 
             <div className={'side-info'}>

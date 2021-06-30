@@ -1,26 +1,16 @@
-import React from "react";
-import Moment from "react-moment";
-import "./Header-time.css";
+import React from 'react';
+import moment from 'moment';
 import "moment/locale/ru";
+import "./Header-time.scss";
 
-const styles = {
-    Moment:{
-        fontWeight: "bold"
-    },
-    Div:{
-        fontSize: 20
-    }
-}
 
+moment.locale('ru');
 export default function HeaderTime(){
     return(
-        <div className={"time-moment"}>
-            <Moment style={styles.Moment} format="HH:mm" interval={1000}/>
-            <Moment style={styles.Div} locale="ru" format="DD MMMM" interval={1000}/>
-            <div>
-                <Moment style={styles.Div} locale="ru" format="YYYY" interval={1000}/>
-                <span> г.</span>
-            </div>
+        <div className='time-moment'>
+            <div className='time-moment__time'>{moment().format('HH:mm')}</div>
+            <div>{moment().format('D MMMM')}</div>
+            <div>{moment().format('YYYY')} г.</div>
         </div>
     );
 }

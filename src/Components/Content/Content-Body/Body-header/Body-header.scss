@@ -1,15 +1,14 @@
+@import "../../../../Variables";
 .body-header{
     padding: 5px 10px 5px 5px;
     background: #0463f3;
     box-sizing: border-box;
-    font-size: 30px;
+    font-size: $body-header-font-size;
     width: 100%;
 }
 .planTime-text, .planTime-stat, .actual-status{
     font-weight: bold;
-    font-size: 30px;
 }
-
 .body-header__first-stroke{
     display: flex;
     justify-content: space-between;
@@ -19,14 +18,22 @@
     justify-content: space-between;
     width: 50%;
 }
-
 .actual-status{
-    height: 45px;
+    height: $actual-status-height;
     max-width: min-content;
     padding: 0 20px 0 20px;
     border-radius: 10px;
     white-space: nowrap;
+    text-align: center;
 }
 .background-red{
     background: red;
+}
+@media screen and (max-width: $max-width), (max-height: $max-height){
+    .body-header{
+        font-size: $body-header-font-size * $scale-ratio;
+    }
+    .actual-status{
+        height: $actual-status-height * $scale-ratio;
+    }
 }

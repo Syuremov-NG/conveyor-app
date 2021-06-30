@@ -12,6 +12,10 @@ export default function HarvesterCard(props){
                 const foo = () => props.type.equip[0] === '2' ? 'build-2' : 'build-3';
                 return foo();
             }
+            case 'КОНВЕЕР':{
+                const foo = () => props.type.equip[0] === '2' ? 'conv-card build-2' : 'conv-card build-3';
+                return foo();
+            }
         }
     }
     return(

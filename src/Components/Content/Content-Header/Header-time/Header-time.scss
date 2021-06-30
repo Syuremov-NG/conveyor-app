@@ -1,0 +1,17 @@
+@import "../../../../Variables";
+.time-moment{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: end;
+    font-size: $time-moment-font-size;
+    line-height: $time-moment-line-height;
+}
+.time-moment__time{
+    font-size: $time-moment-font-size * 1.2;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+

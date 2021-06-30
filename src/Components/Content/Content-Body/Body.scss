@@ -23,15 +23,16 @@
 }
 .body-conv{
   display: flex;
-  box-sizing: border-box;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   width: 100%;
   background: #666d60;
-  height: 80px;
   margin-top: auto;
   margin-bottom: 70px;
   overflow: hidden;
+  border-top: 10px solid #666d60;
+  border-bottom: 10px solid #666d60;
 }
 .conv-info{
   position: absolute;
